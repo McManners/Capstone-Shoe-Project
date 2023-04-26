@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".ShoeDetailActivity">
+
+    <RelativeLayout
+        android:id="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@drawable/shape_toolbar_02">
+
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@android:color/transparent"
+            android:layout_centerVertical="@android:color/transparent"
+            android:src="@drawable/ic_back"/>
+
+        <TextView
+            android:text="Shoe Details"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:layout_below="@+id/toolbarRl"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:id="@+id/picRl"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="centerCrop"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@color/gray02">
+                    <com.github.barteksc.pdfviewer.PDFView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/picView">
+
+                        <TextView
+                            android:id="@+id/pagesTv"
+                            style="@style/TextAppearance.AppCompat.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="5dp"
+                            android:text="N/A" />
+
+                        <TextView
+                            android:id="@+id/pagesLabelTv"
+                            style="@style/TextAppearance.AppCompat.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="5dp"
+                            android:text="" />
+                    </com.github.barteksc.pdfviewer.PDFView>
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </RelativeLayout>
+                <TextView
+                    android:id="@+id/titleTv"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:padding="16dp"
+                    style="@style/TextAppearance.Material3.ActionBar.Title"
+                    android:layout_width="match_parent"
+                    android:text="Shoe name Template"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/picRl"/>
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/titleTv"
+                    >
+
+                    <TableRow>
+
+                        <TextView
+                            android:id="@+id/categoryLabelTv"
+                            android:layout_width="match_parent"
+                            android:paddingStart="16dp"
+                            android:textColor="@android:color/darker_gray"
+                            android:layout_height="wrap_content"
+                            android:text="Category"
+                            android:textSize="16sp"/>
+
+                        <TextView
+                            android:id="@+id/categoryTv"
+                            android:layout_width="match_parent"
+                            android:paddingStart="16dp"
+                            android:textColor="@android:color/darker_gray"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"/>
+
+
+                    </TableRow>
+
+                    <TableRow>
+
+
+                    </TableRow>
+
+                </TableLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/descriptionTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/categoryLabelTv"
+                android:padding="16dp"
+                android:layout_marginTop="5dp"
+                android:text="Shoe Description"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+   <LinearLayout
+       android:id="@+id/addWishlistLl"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       android:layout_alignParentBottom="true">
+       <Button
+           android:id="@+id/wishlistBtn"
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:text="Add To Wish List"
+           android:layout_weight="1"
+           android:drawableEnd="@drawable/ic_addtowishlist"
+           android:layout_marginEnd="5dp"
+           android:layout_marginStart="5dp"
+           />
+
+
+   </LinearLayout>
+
+
+</RelativeLayout>
