@@ -27,8 +27,11 @@ class DashboardUserActivity : AppCompatActivity() {
 
     private lateinit var adapterCategory: AdapterCategory
 
+    private lateinit var adapterBrand: AdapterBrand
 
     private lateinit var categoryArrayList: ArrayList<ModelCategory>
+
+    private lateinit var brandArrayList: ArrayList<ModelBrand>
 //    private lateinit var viewPagerAdapter: ViewPagerAdapter
 
 
@@ -40,6 +43,7 @@ class DashboardUserActivity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
         checkUser()
         loadCategories()
+        loadBrands()
 
         binding.searchEt.addTextChangedListener(object: TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -72,6 +76,7 @@ class DashboardUserActivity : AppCompatActivity() {
             startActivity(Intent(this,ProfileUserActivity::class.java))
         }
 
+
         binding.subTitleTv.setOnClickListener {
             firebaseAuth.signOut()
             startActivity(Intent(this,MainActivity::class.java))
@@ -82,6 +87,27 @@ class DashboardUserActivity : AppCompatActivity() {
         }
     }
 
+    private fun loadBrands() {
+        brandArrayList = ArrayList()
+        val ref = FirebaseDatabase.getInstance().getReference("Brands")
+        ref.addValueEventListener(object : ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                brandArrayList.clear()
+                for(ds in snapshot.children){
+                    var model = ds.getValue(ModelBrand::class.java)
+
+                    brandArrayList.add(model!!)
+                }
+                adapterBrand = AdapterBrand(this@DashboardUserActivity,brandArrayList)
+                binding.brandsRv.adapter = adapterBrand
+
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+            }
+
+        })
+    }
 
 
     private fun loadCategories() {

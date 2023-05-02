@@ -55,7 +55,7 @@
         android:drawableStart="@drawable/ic_search"
         android:drawablePadding="10dp"
         android:padding="10dp"
-        android:hint="Search"
+        android:hint="Search Shoes"
         android:textColorHint="@color/gray02"
         android:textColor="@color/black"/>
 

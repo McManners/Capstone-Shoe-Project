@@ -69,5 +69,16 @@
         tools:listitem="@layout/row_category"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
+    <Button
+        android:layout_alignParentBottom="true"
+
+        android:id="@+id/addBrandBtn"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_button01"
+        android:minHeight="50dp"
+        android:text="Add Brand"/>
+
 
 </RelativeLayout>

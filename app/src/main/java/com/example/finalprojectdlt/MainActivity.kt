@@ -20,10 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        binding.enterBtn.setOnClickListener {
-            startActivity(Intent(this, DashboardUserActivity::class.java))
 
-        }
 
     }
 }

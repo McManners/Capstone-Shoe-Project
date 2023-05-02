@@ -1,16 +1,14 @@
 package com.example.finalprojectdlt
 
-import android.annotation.SuppressLint
 import android.widget.Filter
 
-class FilterCategory: Filter {
-    private var filterList: ArrayList<ModelCategory>
+class FilterBrand: Filter {
+    private var filterList: ArrayList<ModelBrand>
+    private var adapterBrand: AdapterBrand
 
-    private var adapterCategory:AdapterCategory
-
-    constructor(filterList: ArrayList<ModelCategory>, adapterCategory: AdapterCategory) : super() {
+    constructor(filterList: ArrayList<ModelBrand>, adapterBrand: AdapterBrand) : super() {
         this.filterList = filterList
-        this.adapterCategory = adapterCategory
+        this.adapterBrand = adapterBrand
     }
 
     override fun performFiltering(constraint: CharSequence?): FilterResults {
@@ -20,9 +18,9 @@ class FilterCategory: Filter {
         if(constraint != null && constraint.isNotEmpty()){
 
             constraint = constraint.toString().uppercase()
-            val filteredModels:ArrayList<ModelCategory> = ArrayList()
+            val filteredModels:ArrayList<ModelBrand> = ArrayList()
             for(i in 0 until filterList.size){
-                if (filterList[i].category.uppercase().contains(constraint)){
+                if (filterList[i].brand.uppercase().contains(constraint)){
                     filteredModels.add(filterList[i])
                 }
             }
@@ -38,10 +36,9 @@ class FilterCategory: Filter {
         return results
     }
 
-    @SuppressLint("SuspiciousIndentation")
     override fun publishResults(constraint: CharSequence?, results: FilterResults) {
-    adapterCategory.categoryArrayList = results.values as ArrayList<ModelCategory>
-        adapterCategory.notifyDataSetChanged()
-
+        adapterBrand.brandArrayList = results.values as ArrayList<ModelBrand>
+        adapterBrand.notifyDataSetChanged()
     }
+
 }

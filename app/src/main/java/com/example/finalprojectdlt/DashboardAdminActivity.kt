@@ -34,6 +34,7 @@ class DashboardAdminActivity : AppCompatActivity() {
         checkUser()
         loadCategories()
 
+
         binding.searchEt.addTextChangedListener(object: TextWatcher{
             override fun beforeTextChanged(s: CharSequence?, p1: Int, p2: Int, p3: Int) {
             }
@@ -55,6 +56,10 @@ class DashboardAdminActivity : AppCompatActivity() {
             firebaseAuth.signOut()
             checkUser()
 
+        }
+
+        binding.addBrandBtn.setOnClickListener {
+            startActivity(Intent(this,NewAddBrandActivity::class.java))
         }
 
 //        binding.addCategoryBtn.setOnClickListener {

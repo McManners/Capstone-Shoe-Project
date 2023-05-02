@@ -21,6 +21,10 @@ import com.google.firebase.database.ValueEventListener
 
     private var categoryID = ""
     private var category = ""
+     private var brandID = ""
+     private var brand = ""
+
+
 
      private lateinit var picArrayList: ArrayList<ModelShoesInfo>
 
@@ -64,6 +68,8 @@ import com.google.firebase.database.ValueEventListener
         })
 
     }
+
+
 
 
      private fun loadShoesList() {

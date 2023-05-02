@@ -103,7 +103,7 @@
 
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="100dp"
         android:background="@color/white"
         android:drawableStart="@drawable/ic_search"
         android:hint="Search"
@@ -123,6 +123,30 @@
         android:layout_marginBottom="5dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/ui_row_cat"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="240dp"
+            android:layout_marginStart="20dp"
+            android:text="Brands"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/brandsRv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="270dp"
+            android:layout_marginEnd="5dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="5dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/row_brands"/>
+
     </RelativeLayout>
 
     <LinearLayout
