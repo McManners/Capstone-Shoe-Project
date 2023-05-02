@@ -24,10 +24,7 @@ public class PlaceObject : MonoBehaviour
     private void Awake()
     {
         aRRaycastManager = GetComponent<ARRaycastManager>();
-        aRPlaneManager = GetComponent<ARPlaneManager>();
-
-        // Add a listener to the capture button to call the CaptureImage() method when clicked
-        //captureButton.onClick.AddListener(CaptureImage);
+        aRPlaneManager = GetComponent<ARPlaneManager>();;
     }
 
     private void Update()
@@ -51,43 +48,4 @@ public class PlaceObject : MonoBehaviour
             }
         }
     }
-
-    //public void CaptureImage()
-    //{
-    //    // Take a screenshot and save it to the device's photo gallery
-    //    string fileName = "ARImage_" + System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".png";
-    //    ScreenCapture.CaptureScreenshot(fileName);
-    //    StartCoroutine(SaveToGallery(fileName));
-    //}
-
-    //private IEnumerator SaveToGallery(string fileName)
-    //{
-    //    // Wait for the screenshot to be saved before trying to access it
-    //    yield return new WaitForSeconds(1);
-
-    //    // Get the path to the saved screenshot
-    //    string path = Application.persistentDataPath + "/" + fileName;
-
-    //    // Load the screenshot from the path and save it to the device's photo gallery
-    //    Texture2D texture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
-    //    texture.filterMode = FilterMode.Trilinear;
-    //    texture.LoadImage(File.ReadAllBytes(path));
-    //    NativeGallery.Permission permission = NativeGallery.SaveImageToGallery(texture, "AR Images", fileName, (success, galleryPath) => {
-    //        if (success)
-    //        {
-    //            Debug.Log("Image saved to gallery: " + galleryPath);
-    //        }
-    //        else
-    //        {
-    //            Debug.LogError("Failed to save image to gallery");
-    //        }
-    //    });
-
-    //    // Destroy the temporary texture used to load the screenshot
-    //    Destroy(texture);
-    //}
-    //public void Capture_image()
-    //{
-    //    ScreenCapture.CaptureScreenshot("shoepic.png");
-    //}
 }
