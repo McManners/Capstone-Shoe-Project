@@ -16,7 +16,7 @@ import com.google.firebase.database.ValueEventListener
     private lateinit var binding: ActivityShoeListAdBinding
 
     private companion object{
-        const val TAG = "PDF_LIST_ADMIN"
+        const val TAG = "PICK_LIST_ADMIN"
     }
 
     private var categoryID = ""

@@ -29,12 +29,6 @@ class ProfileUserActivity : AppCompatActivity() {
         loadProfileData()
         loadWishlistShoe()
 
-        binding.logoutBtn.setOnClickListener {
-            firebaseAuth.signOut()
-//            checkUser()
-
-        }
-
         binding.backBtn.setOnClickListener {
             onBackPressed()
         }

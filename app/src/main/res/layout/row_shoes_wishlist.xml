@@ -51,6 +51,7 @@
             android:layout_marginTop="8dp"
             android:layout_toEndOf="@+id/shoeDataRl"
             android:maxLines="3"
+            android:ellipsize="end"
             android:text="The desc goes hereThe desc goes hereThe desc goes hereThe desc goes hereThe desc goes hereThe desc goes hereThe desc goes hereThe desc goes hereThe desc goes hereThe desc goes hereThe desc goes hereThe desc goes here"/>
 
         <TextView
@@ -63,16 +64,6 @@
             android:maxLines="1"
             android:text="Category Name"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="7dp"
-            android:layout_marginBottom="4dp"
-            android:layout_toEndOf="@+id/shoeDataRl"
-            android:maxLines="1"
-            android:text="Last Accessed: "
-            android:textSize="10sp" />
 
         <ImageButton
             android:id="@+id/moreBtn"

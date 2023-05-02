@@ -50,7 +50,7 @@ class AdapterShoesInfoAdmins : RecyclerView.Adapter<AdapterShoesInfoAdmins.Holde
 
         holder.titleTv.text = name
         holder.descriptionTv.text= description
-        holder.dateTv.text = formattedDate
+
 
 
         MyApplication.loadCategory(categoryID, holder.categoryTv)
@@ -84,8 +84,7 @@ class AdapterShoesInfoAdmins : RecyclerView.Adapter<AdapterShoesInfoAdmins.Holde
         val descriptionTv = binding.descTv
         val categoryTv = binding.categoryTv
         val sizeTv = binding.sizeTv
-        val dateTv = binding.dateTv
-        val moreBtn = binding.moreBtn
+
     }
 
 }

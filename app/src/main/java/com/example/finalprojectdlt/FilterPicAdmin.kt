@@ -8,6 +8,8 @@ class FilterPicAdmin : Filter {
 
     var adapterShoesInfoAdmin: AdapterShoesInfoAdmins
 
+
+
     constructor(
         filterList: ArrayList<ModelShoesInfo>,
         adapterShoesInfoAdmin: AdapterShoesInfoAdmins
